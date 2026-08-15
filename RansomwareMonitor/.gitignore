@@ -1,0 +1,30 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environments
+venv/
+.env/
+env/
+
+# PyInstaller build output
+build/
+dist/
+*.spec
+
+# App logs (contain sensitive file path data)
+logs/
+
+# Test simulation files
+test_monitor/
+
+# OS junk
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
