@@ -1,0 +1,12 @@
+{
+    "time": "2026-01-13 15:17:38.539535",
+    "affected_file": "C:/Users\\user\\OneDrive\\Desktop\\RansomwareMonitor\\test6.txt",
+    "confidence": "93.00%",
+    "recommended_actions": [
+        "Disconnect system from the internet",
+        "Backup unaffected files immediately",
+        "Run a full antivirus scan",
+        "Restore files from a clean backup",
+        "Do NOT pay the ransom"
+    ]
+}

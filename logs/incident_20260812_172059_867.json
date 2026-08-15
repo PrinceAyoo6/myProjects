@@ -1,0 +1,12 @@
+{
+    "time": "2026-08-12 17:20:59",
+    "affected_file": "C:\\Users\\user\\OneDrive\\Desktop\\RansomwareMonitor\\test_monitor\\simulated_threat_1786598459.encrypted",
+    "confidence": "95.0%",
+    "recommended_actions": [
+        "Disconnect system from the internet",
+        "Backup unaffected files immediately",
+        "Run a full antivirus scan",
+        "Restore files from a clean backup",
+        "Do NOT pay the ransom"
+    ]
+}
