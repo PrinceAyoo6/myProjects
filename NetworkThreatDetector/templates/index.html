@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Network Guardian Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="glass-panel main-header">
+            <div class="logo">
+                <span class="icon">🛡️</span>
+                <h1>Network Guardian</h1>
+            </div>
+            <div class="global-stats">
+                <div class="stat-box">
+                    <span class="label">Total Packets</span>
+                    <span class="value" id="total-packets">0</span>
+                </div>
+                <div class="stat-box alert-box">
+                    <span class="label">Active Alerts</span>
+                    <span class="value" id="total-alerts">0</span>
+                </div>
+                <div class="control-box">
+                    <button id="toggle-sniff-btn" class="btn btn-danger">Stop Sniffing</button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Navigation Bar -->
+        <nav class="glass-panel main-nav">
+            <button class="nav-btn active" data-target="view-overview">Overview</button>
+            <button class="nav-btn" data-target="view-analyzer">Live Packet Analyzer</button>
+            <button class="nav-btn" data-target="view-alerts">Security Alerts</button>
+        </nav>
+
+        <!-- Main Content Views -->
+        <main class="view-container">
+            
+            <!-- View 1: Overview -->
+            <div id="view-overview" class="view-section active">
+                <div class="glass-panel chart-container">
+                    <h2>Protocol Distribution</h2>
+                    <canvas id="protocolChart"></canvas>
+                </div>
+                
+                <div class="glass-panel top-ips-container">
+                    <h2>Top Source IPs</h2>
+                    <div class="top-ips-wrapper">
+                        <ul id="top-ips-list" class="styled-list">
+                            <!-- Populated by JS -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- View 2: Live Packet Analyzer -->
+            <div id="view-analyzer" class="view-section">
+                <div class="glass-panel analyzer-container">
+                    <div class="section-header">
+                        <h2>Live Packet Analyzer</h2>
+                        <div class="pulse-indicator">
+                            <span class="pulse"></span> Live
+                        </div>
+                    </div>
+                    <div class="table-wrapper">
+                        <table class="glass-table">
+                            <thead>
+                                <tr>
+                                    <th>Time</th>
+                                    <th>Source</th>
+                                    <th>Destination</th>
+                                    <th>Protocol</th>
+                                    <th>Info</th>
+                                    <th>Payload Preview</th>
+                                </tr>
+                            </thead>
+                            <tbody id="packet-table-body">
+                                <!-- Populated by JS -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- View 3: Alerts Panel -->
+            <div id="view-alerts" class="view-section">
+                <div class="glass-panel alerts-container">
+                    <div class="section-header">
+                        <h2>Security Alerts</h2>
+                    </div>
+                    <div id="alerts-feed" class="alerts-feed">
+                        <!-- Populated by JS -->
+                        <div class="alert info">
+                            <span class="time">Now</span>
+                            <span class="msg">System initialized. Waiting for packets...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </main>
+
+        <!-- Footer -->
+        <footer class="app-footer">
+            <p>&copy; 2026 Network Guardian Dashboard - Powered by Scapy</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
